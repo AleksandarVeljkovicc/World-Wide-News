@@ -3,11 +3,11 @@ Dynamic website built using PHP, HTML and CSS, and a little JavaScript.
 
 This website is a news app that has 3 users: logged-in user, not logged-in user, and administrator.
 
--Not logged in user can just view news.
+1. Not logged in user can just view news.
 
--Logged in can view news, add comments, and remove their own comments.
+2. Logged in can view news, add comments, and remove their own comments.
 
--The administrator can add comments, remove all the comments, add news, and remove news.
+3. The administrator can add comments, remove all the comments, add news, and remove news.
  
 ![Screenshot_2](https://github.com/user-attachments/assets/b3be8ac1-0cb0-4d22-9c48-f97306df55a6)
 
