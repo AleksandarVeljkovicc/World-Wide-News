@@ -1,0 +1,247 @@
+.header {
+  background-color: #0F2699;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.topRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.logo {
+  height: 40px;
+  display: block;
+}
+
+.socialSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.socialLabel {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.socialLink {
+  display: flex;
+  background-color: #445be7;
+  color: white;
+  text-decoration: none;
+  font-size: 36px;
+  margin-right: 16px;
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: color 0.2s;
+}
+
+.socialLink:last-child {
+  margin-right: 0;
+}
+
+.socialLink:hover {
+  color: #ce1125;
+}
+
+.navRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 0;
+}
+
+.navWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hamburgerBtn {
+  display: none;
+  background: none !important;
+  border: none !important;
+  color: white !important;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.hamburgerBtn:focus {
+  outline: none;
+}
+
+.navList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.navLink {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: #CE1125;
+}
+
+.loginLink {
+  color: #CE1125 !important;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.loginLink:hover {
+  color: #CE1125 !important;
+  text-decoration: underline;
+}
+
+.loginListItem {
+  margin-left: auto;
+}
+
+@media (max-width: 991.98px) {
+  .header {
+    z-index: 1000;
+  }
+
+  .header > .container {
+    position: relative;
+  }
+
+  .topRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .socialSection {
+    align-items: flex-end;
+  }
+
+  .socialLabel {
+    display: none;
+  }
+
+  .socialLink {
+    font-size: 28px;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+  }
+
+  .navRow {
+    border-top: none;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+  }
+
+  .navWrapper {
+    position: relative;
+    width: auto;
+  }
+
+  .hamburgerBtn {
+    display: block;
+    outline: none !important;
+  }
+
+  .hamburgerBtn:hover,
+  .hamburgerBtn:active,
+  .hamburgerBtn:focus {
+    color: white !important;
+    background: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .navList {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: calc(100vw - 2rem);
+    max-width: 300px;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0F2699;
+    z-index: 10000;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 0.25rem;
+    outline: none !important;
+  }
+
+  .navList.open {
+    display: flex;
+  }
+
+  .navLink {
+    color: white !important;
+    outline: none !important;
+  }
+
+  .navLink:hover,
+  .navLink:active,
+  .navLink:focus {
+    color: white !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .loginListItem {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .loginLink {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: #CE1125 !important;
+  }
+
+  .loginLink:hover,
+  .loginLink:active,
+  .loginLink:focus {
+    color: #CE1125 !important;
+    text-decoration: underline;
+  }
+}

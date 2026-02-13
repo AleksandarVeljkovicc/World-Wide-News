@@ -1,0 +1,12 @@
+2026-02-13 15:04:16 - Register input: {"username":"mailer3","password":"1234567","cPassword":"1234567","email":"mailer3@gmail.com","first_name":"mailer3","last_name":"mailer3","country":"Serbia","city":"miler<>","date_of_birth":""}
+2026-02-13 15:04:16 - Validation errors: {"first_name":"You can only enter text.","last_name":"You can only enter text.","city":"You can only enter text."}
+2026-02-13 15:04:21 - Register input: {"username":"mailer3","password":"1234567","cPassword":"1234567","email":"mailer3@gmail.com","first_name":"mailer3","last_name":"mailer3","country":"Serbia","city":"miler","date_of_birth":""}
+2026-02-13 15:04:21 - Validation errors: {"first_name":"You can only enter text.","last_name":"You can only enter text."}
+2026-02-13 15:05:50 - Register input: {"username":"mailer3","password":"1234567","cPassword":"1234567","email":"mailer3@gmail.com","first_name":"mailer3","last_name":"mailer3","country":"Serbia","city":"mailer3<>","date_of_birth":""}
+2026-02-13 15:05:50 - Validation errors: {"first_name":"You can only enter text.","last_name":"You can only enter text.","city":"You can only enter text."}
+2026-02-13 15:06:01 - Register input: {"username":"mailer3","password":"1234567","cPassword":"1234567","email":"mailer3@gmail.com","first_name":"mailer3","last_name":"mailer3","country":"Serbia","city":"mailer3","date_of_birth":""}
+2026-02-13 15:06:01 - Validation errors: {"first_name":"You can only enter text.","last_name":"You can only enter text.","city":"You can only enter text."}
+2026-02-13 15:07:35 - Register input: {"username":"mailer3","password":"1234567","cPassword":"1234567","email":"mailer3@gmail.com","first_name":"mailer3","last_name":"mailer3","country":"Poland","city":"mailer3<>","date_of_birth":""}
+2026-02-13 15:07:35 - Validation errors: {"first_name":"You can only enter text.","last_name":"You can only enter text.","city":"You can only enter text."}
+2026-02-13 15:08:37 - Register input: {"username":"mailer3","password":"1234567","cPassword":"1234567","email":"mailer3@gmail.com","first_name":"mailer3","last_name":"mailer3","country":"Serbia","city":"mailer3<>","date_of_birth":""}
+2026-02-13 15:08:37 - Validation errors: {"first_name":"You can only enter text.","last_name":"You can only enter text.","city":"You can only enter text."}

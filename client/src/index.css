@@ -1,0 +1,120 @@
+:root {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+html {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/background-image.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+a {
+  color: #ce1125;
+}
+
+a:hover {
+  color: #a00e1d;
+}
+
+/* Global button styles */
+button:not([class*="hamburger"]):not([style*="background: none"]):not([style*="background:none"]),
+.btn,
+.btn-primary,
+.btn-danger,
+.btn-secondary,
+.btn-success,
+.btn-warning,
+.btn-info,
+.btn-light,
+.btn-dark {
+  background-color: #CE1125 !important;
+  border-color: #CE1125 !important;
+  color: white !important;
+}
+
+button:hover,
+.btn:hover,
+.btn-primary:hover,
+.btn-danger:hover,
+.btn-secondary:hover,
+.btn-success:hover,
+.btn-warning:hover,
+.btn-info:hover,
+.btn-light:hover,
+.btn-dark:hover {
+  background-color: #a00e1d !important;
+  border-color: #a00e1d !important;
+  color: white !important;
+}
+
+button:focus,
+.btn:focus,
+.btn-primary:focus,
+.btn-danger:focus,
+.btn-secondary:focus,
+.btn-success:focus,
+.btn-warning:focus,
+.btn-info:focus,
+.btn-light:focus,
+.btn-dark:focus {
+  background-color: #CE1125 !important;
+  border-color: #CE1125 !important;
+  color: white !important;
+  box-shadow: 0 0 0 0.25rem rgba(206, 17, 37, 0.25) !important;
+}
+
+button:active,
+.btn:active,
+.btn-primary:active,
+.btn-danger:active,
+.btn-secondary:active,
+.btn-success:active,
+.btn-warning:active,
+.btn-info:active,
+.btn-light:active,
+.btn-dark:active {
+  background-color: #8b0e1a !important;
+  border-color: #8b0e1a !important;
+  color: white !important;
+}
+
+button:disabled,
+.btn:disabled,
+.btn-primary:disabled,
+.btn-danger:disabled,
+.btn-secondary:disabled,
+.btn-success:disabled,
+.btn-warning:disabled,
+.btn-info:disabled,
+.btn-light:disabled,
+.btn-dark:disabled {
+  background-color: #CE1125 !important;
+  border-color: #CE1125 !important;
+  opacity: 0.65 !important;
+  color: white !important;
+}

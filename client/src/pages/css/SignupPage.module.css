@@ -1,0 +1,181 @@
+.signupContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 2rem 1rem;
+}
+
+.signupForm {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  background: rgba(75, 85, 150, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.signupTitle {
+  color: #CE1125;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  text-transform: uppercase;
+}
+
+.errorMessages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.errorMessage {
+  background-color: red;
+  color: white;
+  display: inline-block;
+  padding: 3px;
+  border-radius: 5px;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  margin: 0;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  width: 100%;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.2s;
+}
+
+.input:focus {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(206, 17, 37, 0.3) !important;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(206, 17, 37, 0.1);
+}
+
+.input::placeholder {
+  color: #6c757d;
+}
+
+.input[type="date"] {
+  color: #6c757d;
+}
+
+.input[type="date"]:not(:focus):not(:valid) {
+  color: #6c757d;
+}
+
+.input[type="date"]:focus,
+.input[type="date"]:valid {
+  color: var(--bs-body-color, #212529);
+}
+
+select.input {
+  color: var(--bs-body-color, #212529);
+}
+
+select.input option {
+  color: var(--bs-body-color, #212529);
+}
+
+.addPhotoButton {
+  width: 100%;
+  background-color: #CE1125 !important;
+  border-color: #CE1125 !important;
+  color: white !important;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.addPhotoButton:hover {
+  background-color: #a00e1f !important;
+  border-color: #a00e1f !important;
+  transform: translateY(-1px);
+}
+
+.addPhotoButton:active {
+  transform: translateY(0);
+}
+
+.submitButton {
+  width: 100%;
+  background-color: #CE1125 !important;
+  border-color: #CE1125 !important;
+  color: white !important;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.submitButton:hover {
+  background-color: #a00e1f !important;
+  border-color: #a00e1f !important;
+  transform: translateY(-1px);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loginText {
+  text-align: center;
+  margin: 0;
+  color: white;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+.loginLink {
+  color: #CE1125 !important;
+  text-decoration: none;
+  font-weight: 600;
+  transition: text-decoration 0.2s;
+}
+
+.loginLink:hover {
+  color: #CE1125 !important;
+  text-decoration: underline;
+}
+
+@media (max-width: 575.98px) {
+  .signupForm {
+    padding: 1.5rem;
+  }
+
+  .signupTitle {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+}

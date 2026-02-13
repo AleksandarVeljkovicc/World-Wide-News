@@ -1,0 +1,18 @@
+.articleContainer {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.25rem;
+}
+
+.articleImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 575.98px) {
+  .articleContainer {
+    padding: 1.5rem;
+  }
+}

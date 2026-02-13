@@ -1,0 +1,11 @@
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 575.98px) {
+  .container {
+    padding: 1.5rem;
+  }
+}
