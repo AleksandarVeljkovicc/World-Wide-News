@@ -56,7 +56,8 @@ This application requires a local Apache HTTP Server to be running, the project 
 - Navigate to the server directory and run the command composer test.
 - Navigate to the client directory and run the command npm run test.
  
-![Screenshot_2](https://github.com/user-attachments/assets/b3be8ac1-0cb0-4d22-9c48-f97306df55a6)
+<img width="1895" height="742" alt="wwn-slika" src="https://github.com/user-attachments/assets/2d2b83a3-9e42-453e-b8f6-3aebbc23fcd0" />
+
 
 ![news_db](https://github.com/user-attachments/assets/82853684-053e-4fa1-9e94-666bcd00dab0)
 
