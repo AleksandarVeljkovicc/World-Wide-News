@@ -49,7 +49,7 @@ return [
 - Navigate to the server directory and run: composer install
 
 4. Run the App:
-This application requires a local Apache HTTP Server to be running, the project must be placed inside the Apache web root directory www.
+This application requires a local Apache HTTP Server to be running, the project must be placed inside the Apache web root directory www
 - From the client directory: npm run dev
 
 5. Run the tests
