@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost/News-server/server/public',
+        target: 'http://localhost/World-Wide-News-main/server/public',
         changeOrigin: true,
       },
     },

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { validateForbiddenChars, getForbiddenCharsError } from '../validation/InputValidator';
+import { validateAngleBrackets, getAngleBracketsError } from '../validation/InputValidator';
 import Logger from '../utils/logger';
 import styles from './css/SignupPage.module.css';
 
@@ -45,23 +45,23 @@ export default function SignupPage() {
     e.preventDefault();
     const newErrors: Record<string, string> = {};
     
-    if (!validateForbiddenChars(form.username)) {
-      newErrors.username = getForbiddenCharsError('Username');
+    if (!validateAngleBrackets(form.username)) {
+      newErrors.username = getAngleBracketsError('Username');
     }
-    if (!validateForbiddenChars(form.password)) {
-      newErrors.password = getForbiddenCharsError('Password');
+    if (!validateAngleBrackets(form.password)) {
+      newErrors.password = getAngleBracketsError('Password');
     }
-    if (!validateForbiddenChars(form.email)) {
-      newErrors.email = getForbiddenCharsError('Email');
+    if (!validateAngleBrackets(form.email)) {
+      newErrors.email = getAngleBracketsError('Email');
     }
-    if (!validateForbiddenChars(form.first_name)) {
-      newErrors.first_name = getForbiddenCharsError('First name');
+    if (!validateAngleBrackets(form.first_name)) {
+      newErrors.first_name = getAngleBracketsError('First name');
     }
-    if (!validateForbiddenChars(form.last_name)) {
-      newErrors.last_name = getForbiddenCharsError('Last name');
+    if (!validateAngleBrackets(form.last_name)) {
+      newErrors.last_name = getAngleBracketsError('Last name');
     }
-    if (form.city && !validateForbiddenChars(form.city)) {
-      newErrors.city = getForbiddenCharsError('City');
+    if (form.city && !validateAngleBrackets(form.city)) {
+      newErrors.city = getAngleBracketsError('City');
     }
     
     if (Object.keys(newErrors).length > 0) {

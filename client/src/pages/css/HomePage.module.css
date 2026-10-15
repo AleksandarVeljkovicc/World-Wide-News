@@ -1,11 +1,11 @@
 .newsContainer {
   background-color: white;
   padding: 2rem;
-  border-radius: 0.25rem;
+  border-radius: 0;
 }
 
 .sectionTitle {
-  color: var(--bs-body-color, #212529);
+  color: #0F2699;
   font-size: 2rem;
   font-weight: 600;
   text-align: center;
@@ -62,7 +62,7 @@
 }
 
 .newsTitle {
-  color: var(--bs-body-color, #212529);
+  color: #0F2699;
   font-size: 1.25rem;
   font-weight: 500;
   margin: 0;
@@ -70,14 +70,15 @@
 }
 
 .newsTitleLink {
-  color: var(--bs-body-color, #212529);
+  color: #0F2699;
   text-decoration: none;
   transition: text-decoration 0.2s;
 }
 
 .newsTitleLink:hover {
-  color: var(--bs-body-color, #212529);
+  color: #0F2699;
   text-decoration: underline;
+  text-decoration-color: #0F2699;
 }
 
 .noImagePlaceholder {

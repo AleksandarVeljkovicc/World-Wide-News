@@ -101,6 +101,23 @@ describe('LoginPage', () => {
     expect(mockNavigate).toHaveBeenCalledWith('/')
   })
 
+  it('should reject apostrophes in login inputs without calling login', async () => {
+    const user = userEvent.setup()
+
+    render(
+      <BrowserRouter>
+        <LoginPage />
+      </BrowserRouter>
+    )
+
+    await user.type(screen.getByPlaceholderText('Username'), "user'name")
+    await user.type(screen.getByPlaceholderText('Password'), 'password123')
+    await user.click(screen.getByRole('button', { name: /sing in/i }))
+
+    expect(mockLogin).not.toHaveBeenCalled()
+    expect(screen.getByText("Username cannot contain the characters: < > '")).toBeInTheDocument()
+  })
+
   it('should handle form submission with remember me checked', async () => {
     const user = userEvent.setup()
     mockLogin.mockResolvedValue(undefined)

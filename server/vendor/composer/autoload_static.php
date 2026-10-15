@@ -12,27 +12,27 @@ class ComposerStaticInitb32dc639872928510d4bb3f5ac0dfbd9
     );
 
     public static $prefixLengthsPsr4 = array (
-        'V' => 
+        'V' =>
         array (
             'Validation\\' => 11,
         ),
-        'T' => 
+        'T' =>
         array (
             'Tests\\' => 6,
         ),
-        'P' => 
+        'P' =>
         array (
             'PhpParser\\' => 10,
         ),
-        'M' => 
+        'M' =>
         array (
             'Models\\' => 7,
         ),
-        'D' => 
+        'D' =>
         array (
             'DeepCopy\\' => 9,
         ),
-        'C' => 
+        'C' =>
         array (
             'Core\\Interfaces\\' => 16,
             'Core\\' => 5,
@@ -41,36 +41,36 @@ class ComposerStaticInitb32dc639872928510d4bb3f5ac0dfbd9
     );
 
     public static $prefixDirsPsr4 = array (
-        'Validation\\' => 
+        'Validation\\' =>
         array (
             0 => __DIR__ . '/../..' . '/validation',
         ),
-        'Tests\\' => 
+        'Tests\\' =>
         array (
             0 => __DIR__ . '/../..' . '/tests',
             1 => __DIR__ . '/../..' . '/tests',
         ),
-        'PhpParser\\' => 
+        'PhpParser\\' =>
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-        'Models\\' => 
+        'Models\\' =>
         array (
             0 => __DIR__ . '/../..' . '/models',
         ),
-        'DeepCopy\\' => 
+        'DeepCopy\\' =>
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
-        'Core\\Interfaces\\' => 
+        'Core\\Interfaces\\' =>
         array (
             0 => __DIR__ . '/../..' . '/core/interfaces',
         ),
-        'Core\\' => 
+        'Core\\' =>
         array (
             0 => __DIR__ . '/../..' . '/core',
         ),
-        'Controllers\\' => 
+        'Controllers\\' =>
         array (
             0 => __DIR__ . '/../..' . '/controllers',
         ),

@@ -1,4 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { StrictMode } from 'react'
 import { screen, waitFor, render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { BrowserRouter } from 'react-router-dom'
@@ -92,6 +93,27 @@ describe('NewsPage', () => {
       expect(screen.getByText('Test Article')).toBeInTheDocument()
       expect(screen.getByText('Article content here')).toBeInTheDocument()
     })
+  })
+
+  it('should request the article only once when strict mode replays effects', async () => {
+    vi.mocked(api.get)
+      .mockResolvedValueOnce(mockArticle)
+      .mockResolvedValueOnce({ comments: [] })
+
+    render(
+      <StrictMode>
+        <BrowserRouter>
+          <NewsPage />
+        </BrowserRouter>
+      </StrictMode>
+    )
+
+    await waitFor(() => {
+      expect(screen.getByText('Article content here')).toBeInTheDocument()
+    })
+    expect(api.get).toHaveBeenNthCalledWith(1, '/news/1')
+    expect(api.get).toHaveBeenNthCalledWith(2, '/news/1/comments')
+    expect(api.get).toHaveBeenCalledTimes(2)
   })
 
   it('should display "Article not found" when article does not exist', async () => {
@@ -197,14 +219,47 @@ describe('NewsPage', () => {
     })
 
     const commentInput = screen.getByPlaceholderText('Comment')
-    await user.type(commentInput, 'Test comment')
+    await user.type(commentInput, "It's a useful comment")
     await user.click(screen.getByRole('button', { name: /comment/i }))
 
     await waitFor(() => {
       expect(api.post).toHaveBeenCalledWith('/news/1/comments', {
-        comment: 'Test comment',
+        comment: "It's a useful comment",
       })
     })
+  })
+
+  it('should reject comments containing angle brackets', async () => {
+    const user = userEvent.setup()
+    vi.mocked(useAuth).mockReturnValue({
+      login: vi.fn(),
+      isAuthenticated: true,
+      logout: vi.fn(),
+      register: vi.fn(),
+      user: { id: 1, username: 'test', info: 'Test User', status: 'User' },
+      token: 'token',
+      isAdmin: false,
+    })
+
+    vi.mocked(api.get)
+      .mockResolvedValueOnce(mockArticle)
+      .mockResolvedValueOnce({ comments: [] })
+
+    render(
+      <BrowserRouter>
+        <NewsPage />
+      </BrowserRouter>
+    )
+
+    await waitFor(() => {
+      expect(screen.getByPlaceholderText('Comment')).toBeInTheDocument()
+    })
+
+    await user.type(screen.getByPlaceholderText('Comment'), 'Invalid <comment>')
+    await user.click(screen.getByRole('button', { name: /comment/i }))
+
+    expect(screen.getByText('Comment cannot contain the characters: < >')).toBeInTheDocument()
+    expect(api.post).not.toHaveBeenCalled()
   })
 
   it('should validate comment length', async () => {

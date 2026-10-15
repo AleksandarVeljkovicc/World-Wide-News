@@ -3,7 +3,7 @@ import { Form, Button, Card, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { api } from '../config/api';
-import { validateForbiddenChars, getForbiddenCharsError } from '../validation/InputValidator';
+import { validateAngleBrackets, getAngleBracketsError } from '../validation/InputValidator';
 import Logger from '../utils/logger';
 import ErrorHandler from '../utils/errorHandler';
 import styles from './css/AddNewsPage.module.css';
@@ -53,12 +53,12 @@ export default function AddNewsPage() {
       newErrors.upload = 'Please choose an image.';
     }
     
-    if (!validateForbiddenChars(headline)) {
-      newErrors.headline = getForbiddenCharsError('Headline');
+    if (!validateAngleBrackets(headline)) {
+      newErrors.headline = getAngleBracketsError('Headline');
     }
     
-    if (!validateForbiddenChars(article)) {
-      newErrors.article = getForbiddenCharsError('Article');
+    if (!validateAngleBrackets(article)) {
+      newErrors.article = getAngleBracketsError('Article');
     }
     
     if (Object.keys(newErrors).length > 0) {

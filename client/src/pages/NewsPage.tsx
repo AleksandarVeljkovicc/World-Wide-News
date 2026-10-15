@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Card, Form, Button, ListGroup } from 'react-bootstrap';
 import { api } from '../config/api';
 import { useAuth } from '../contexts/AuthContext';
-import { validateForbiddenChars, getForbiddenCharsError } from '../validation/InputValidator';
+import { validateAngleBrackets, getAngleBracketsError } from '../validation/InputValidator';
 import Logger from '../utils/logger';
 import ErrorHandler from '../utils/errorHandler';
 import styles from './css/NewsPage.module.css';
@@ -40,15 +40,7 @@ export default function NewsPage() {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState('');
-
-  const loadArticle = () => {
-    if (!id) return;
-    api
-      .get<NewsArticle>(`/news/${id}`)
-      .then(setArticle)
-      .catch(() => setArticle(null))
-      .finally(() => setLoading(false));
-  };
+  const requestedArticleId = useRef<string | null>(null);
 
   const loadComments = () => {
     if (!id) return;
@@ -59,7 +51,13 @@ export default function NewsPage() {
   };
 
   useEffect(() => {
-    loadArticle();
+    if (!id || requestedArticleId.current === id) return;
+    requestedArticleId.current = id;
+    api
+      .get<NewsArticle>(`/news/${id}`)
+      .then(setArticle)
+      .catch(() => setArticle(null))
+      .finally(() => setLoading(false));
   }, [id]);
 
   useEffect(() => {
@@ -72,8 +70,8 @@ export default function NewsPage() {
       setMessage('Comment cannot be less than 2 characters.');
       return;
     }
-    if (!validateForbiddenChars(commentText)) {
-      setMessage(getForbiddenCharsError('Comment'));
+    if (!validateAngleBrackets(commentText)) {
+      setMessage(getAngleBracketsError('Comment'));
       return;
     }
     setSubmitting(true);

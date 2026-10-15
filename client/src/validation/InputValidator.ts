@@ -3,8 +3,16 @@ export const validateForbiddenChars = (value: string): boolean => {
   return !forbidden.some(char => value.includes(char));
 };
 
+export const validateAngleBrackets = (value: string): boolean => {
+  return !value.includes('<') && !value.includes('>');
+};
+
 export const getForbiddenCharsError = (fieldName: string): string => {
   return `${fieldName} cannot contain the characters: < > '`;
+};
+
+export const getAngleBracketsError = (fieldName: string): string => {
+  return `${fieldName} cannot contain the characters: < >`;
 };
 
 export const sanitizeString = (value: string): string => {

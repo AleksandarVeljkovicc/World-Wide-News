@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { validateForbiddenChars, getForbiddenCharsError } from '../validation/InputValidator';
 import Logger from '../utils/logger';
 import ErrorHandler from '../utils/errorHandler';
 import styles from './css/LoginPage.module.css';
@@ -23,6 +24,16 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+
+    if (!validateForbiddenChars(username)) {
+      setError(getForbiddenCharsError('Username'));
+      return;
+    }
+    if (!validateForbiddenChars(password)) {
+      setError(getForbiddenCharsError('Password'));
+      return;
+    }
+
     setLoading(true);
     
     Logger.logInput('login', { username, remember });

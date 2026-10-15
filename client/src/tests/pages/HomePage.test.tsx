@@ -16,7 +16,6 @@ vi.mock('../../utils/errorHandler', () => ({
   },
 }))
 
-const mockNavigate = vi.fn()
 vi.mock('react-router-dom', async () => {
   const actual = await vi.importActual('react-router-dom')
   return {

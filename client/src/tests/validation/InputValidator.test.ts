@@ -1,7 +1,9 @@
 import { describe, it, expect } from 'vitest'
 import {
   validateForbiddenChars,
+  validateAngleBrackets,
   getForbiddenCharsError,
+  getAngleBracketsError,
   sanitizeString,
   validateEmail,
   validateMinLength,
@@ -36,6 +38,18 @@ describe('InputValidator', () => {
     })
   })
 
+  describe('validateAngleBrackets', () => {
+    it('should return true for strings without angle brackets, including apostrophes', () => {
+      expect(validateAngleBrackets('hello world')).toBe(true)
+      expect(validateAngleBrackets("it's valid")).toBe(true)
+    })
+
+    it('should return false for strings containing < or >', () => {
+      expect(validateAngleBrackets('hello<world')).toBe(false)
+      expect(validateAngleBrackets('hello>world')).toBe(false)
+    })
+  })
+
   describe('getForbiddenCharsError', () => {
     it('should return correct error message', () => {
       expect(getForbiddenCharsError('Username')).toBe(
@@ -43,6 +57,14 @@ describe('InputValidator', () => {
       )
       expect(getForbiddenCharsError('Comment')).toBe(
         'Comment cannot contain the characters: < > \''
+      )
+    })
+  })
+
+  describe('getAngleBracketsError', () => {
+    it('should only mention angle brackets', () => {
+      expect(getAngleBracketsError('Comment')).toBe(
+        'Comment cannot contain the characters: < >'
       )
     })
   })

@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'news-server/server',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '54e5c1dc06c36c00606bad5651e403257ef38722',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => true,
         ),
         'news-server/server' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '54e5c1dc06c36c00606bad5651e403257ef38722',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
